@@ -1,7 +1,42 @@
 {
   "catalogVersion": 1,
-  "serial": 3,
+  "serial": 5,
   "plugins": [
+    {
+      "id": "bounty-ops",
+      "displayName": "Bounty Ops",
+      "description": "Surfaces hunt journal, active targets, and logged findings from your bug bounty workspace. Log new findings directly from chat sessions.",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "platform": ">=1.0.0 <2.0.0",
+          "dataVersion": 1,
+          "url": "https://github.com/ProwlrBot/redamon-plugins/releases/download/bounty-ops-v1.0.0/bounty-ops-1.0.0.tar.gz",
+          "sha256": "deb8369e6e44deb9fe8824770f5398c12cb957eb6765901cf2e912fc1abe918d",
+          "size": 3446,
+          "permissions": [
+            "session:read",
+            "llm:invoke"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recon-sync",
+      "displayName": "Recon Sync",
+      "description": "Tracks recon output freshness across all active bug bounty targets. Shows per-target host counts and flags stale recon that needs a rescan.",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "platform": ">=1.0.0 <2.0.0",
+          "dataVersion": 1,
+          "url": "https://github.com/ProwlrBot/redamon-plugins/releases/download/recon-sync-v1.0.0/recon-sync-1.0.0.tar.gz",
+          "sha256": "635db0f84b58e3c5ef4e7edbfa57f196d1ac389112f6aebeb0a7d1da6ffe169d",
+          "size": 2549,
+          "permissions": []
+        }
+      ]
+    },
     {
       "id": "skiller",
       "displayName": "Skiller",

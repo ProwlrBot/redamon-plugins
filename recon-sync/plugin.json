@@ -1,0 +1,39 @@
+{
+  "id": "recon-sync",
+  "version": "1.0.0",
+  "displayName": "Recon Sync",
+  "description": "Tracks recon output freshness across all active bug bounty targets. Shows per-target host counts and flags stale recon that needs a rescan.",
+  "platform": ">=1.0.0 <2.0.0",
+  "dataVersion": 1,
+  "permissions": [],
+  "actions": [
+    {
+      "id": "sync_recon",
+      "entry": "engine/main.py:sync_recon",
+      "timeoutSeconds": 60,
+      "async": true
+    },
+    {
+      "id": "list_targets",
+      "entry": "engine/main.py:list_targets",
+      "timeoutSeconds": 10,
+      "async": false
+    },
+    {
+      "id": "get_stale",
+      "entry": "engine/main.py:get_stale",
+      "timeoutSeconds": 10,
+      "async": false
+    }
+  ],
+  "screens": [
+    "ui/status.json"
+  ],
+  "contributes": {
+    "nav": {
+      "label": "Recon Sync",
+      "icon": "target",
+      "screen": "ui/status.json"
+    }
+  }
+}

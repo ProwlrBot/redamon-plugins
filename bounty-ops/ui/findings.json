@@ -1,0 +1,18 @@
+{
+  "type": "page",
+  "title": "Logged Findings",
+  "children": [
+    {
+      "type": "table",
+      "source": {"action": "list_findings"},
+      "columns": [
+        {"field": "severity", "label": "Severity"},
+        {"field": "title", "label": "Title"},
+        {"field": "target", "label": "Target"},
+        {"field": "vuln_class", "label": "Class"},
+        {"field": "url", "label": "URL"}
+      ],
+      "emptyText": "No findings logged yet. Use 'Log finding from this session' in a chat session."
+    }
+  ]
+}

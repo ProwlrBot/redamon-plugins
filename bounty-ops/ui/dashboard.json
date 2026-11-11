@@ -1,0 +1,22 @@
+{
+  "type": "page",
+  "title": "Active Targets",
+  "children": [
+    {
+      "type": "table",
+      "source": {"action": "list_targets"},
+      "columns": [
+        {"field": "target", "label": "Target"},
+        {"field": "platform", "label": "Platform"},
+        {"field": "last_entry", "label": "Last Activity"},
+        {"field": "status", "label": "Status"}
+      ],
+      "emptyText": "No targets found. Click Sync Journal to load from hunt-memory."
+    },
+    {
+      "type": "button",
+      "label": "Sync Journal",
+      "action": "sync_journal"
+    }
+  ]
+}

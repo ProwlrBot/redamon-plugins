@@ -1,0 +1,23 @@
+{
+  "type": "page",
+  "title": "Recon Status",
+  "children": [
+    {
+      "type": "table",
+      "source": {"action": "list_targets"},
+      "columns": [
+        {"field": "target", "label": "Target"},
+        {"field": "host_count", "label": "Hosts", "format": "number"},
+        {"field": "url_count", "label": "URLs", "format": "number"},
+        {"field": "age_hours", "label": "Age (h)", "format": "number"},
+        {"field": "stale", "label": "Stale"}
+      ],
+      "emptyText": "No recon data. Click Sync Recon to scan hunt-memory."
+    },
+    {
+      "type": "button",
+      "label": "Sync Recon",
+      "action": "sync_recon"
+    }
+  ]
+}

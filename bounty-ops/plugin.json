@@ -1,0 +1,57 @@
+{
+  "id": "bounty-ops",
+  "version": "1.0.0",
+  "displayName": "Bounty Ops",
+  "description": "Surfaces hunt journal, active targets, and logged findings from your bug bounty workspace. Log new findings directly from chat sessions.",
+  "platform": ">=1.0.0 <2.0.0",
+  "dataVersion": 1,
+  "permissions": ["session:read", "llm:invoke"],
+  "llmFeature": {
+    "description": "Reads the current chat session and extracts any security finding, returning structured JSON."
+  },
+  "actions": [
+    {
+      "id": "sync_journal",
+      "entry": "engine/main.py:sync_journal",
+      "timeoutSeconds": 30,
+      "async": false
+    },
+    {
+      "id": "list_targets",
+      "entry": "engine/main.py:list_targets",
+      "timeoutSeconds": 10,
+      "async": false
+    },
+    {
+      "id": "list_findings",
+      "entry": "engine/main.py:list_findings",
+      "timeoutSeconds": 10,
+      "async": false
+    },
+    {
+      "id": "log_finding",
+      "entry": "engine/main.py:log_finding",
+      "timeoutSeconds": 120,
+      "async": true,
+      "llm": true
+    }
+  ],
+  "screens": [
+    "ui/dashboard.json",
+    "ui/findings.json"
+  ],
+  "contributes": {
+    "nav": {
+      "label": "Bounty Ops",
+      "icon": "shield",
+      "screen": "ui/dashboard.json"
+    },
+    "chat.session.actions": [
+      {
+        "label": "Log finding from this session",
+        "icon": "bug",
+        "action": "log_finding"
+      }
+    ]
+  }
+}
